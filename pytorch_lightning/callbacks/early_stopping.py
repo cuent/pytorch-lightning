@@ -28,7 +28,7 @@ from pytorch_lightning import _logger as log
 from pytorch_lightning.callbacks.base import Callback
 from pytorch_lightning.utilities import rank_zero_warn, TPU_AVAILABLE
 
-torch_inf = torch.tensor(np.Inf)
+torch_inf = torch.tensor(float(np.inf))
 
 
 class EarlyStopping(Callback):
