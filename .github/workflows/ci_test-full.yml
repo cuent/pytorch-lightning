@@ -119,7 +119,7 @@ jobs:
       run: |
         # NOTE: do not include coverage report here, see: https://github.com/nedbat/coveragepy/issues/1003
         ulimit -s | cat
-        ulimit -s 8192
+        ulimit -s 16384
         ulimit -s | cat
         coverage run --source pytorch_lightning -m pytest pytorch_lightning tests pl_examples -v --durations=50 --junitxml=junit/test-results-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.requires }}.xml
 
