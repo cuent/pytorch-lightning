@@ -122,8 +122,8 @@ jobs:
         # ulimit -s | cat
         # ulimit -s 70000 && 
         sudo apt -y install gdb
-        gdb pytest
-        run pytorch_lightning tests pl_examples -v
+        gdb coverage 
+        run run --source pytorch_lightning -m pytest pytorch_lightning tests pl_examples -v --durations=50 --junitxml=junit/test-results-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.requires }}.xml
         backtrace
         # coverage run --source pytorch_lightning -m pytest pytorch_lightning tests pl_examples -v --durations=50 --junitxml=junit/test-results-${{ runner.os }}-${{ matrix.python-version }}-${{ matrix.requires }}.xml
 
