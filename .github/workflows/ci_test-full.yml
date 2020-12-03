@@ -121,6 +121,7 @@ jobs:
         # ulimit -s | cat
         # ulimit -s | cat
         # ulimit -s 70000 && 
+        apt install gdb -y
         gdb pytest
         run pytest pytorch_lightning tests pl_examples -v
         backtrace
