@@ -16,7 +16,7 @@ jobs:
       matrix:
         os: [ubuntu-18.04]
         python-version: [3.8]
-        requires: ['minimal', 'latest']
+        requires: ['minimal']
 
     # Timeout: https://stackoverflow.com/a/59076067/4521646
     timeout-minutes: 35  # TODO: the macOS is taking too long, probably caching did not work...
@@ -121,7 +121,7 @@ jobs:
         # ulimit -s | cat
         # ulimit -s | cat
         # ulimit -s 70000 && 
-        apt install gdb -y
+        sudo apt -y install gdb
         gdb pytest
         run pytest pytorch_lightning tests pl_examples -v
         backtrace
