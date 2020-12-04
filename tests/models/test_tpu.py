@@ -161,6 +161,7 @@ def test_model_16bit_tpu_cores_8(tmpdir):
 
     tpipes.run_model_test(trainer_options, model, on_gpu=False, with_hpc=False)
 
+@pytest.mark.skip
 
 @pytest.mark.skipif(not TPU_AVAILABLE, reason="test requires TPU machine")
 @pl_multi_process_test
@@ -243,6 +244,7 @@ def test_distributed_backend_set_when_using_tpu(tmpdir, tpu_cores):
     """Test if distributed_backend is set to `tpu` when tpu_cores is not None"""
     assert Trainer(tpu_cores=tpu_cores).distributed_backend == "tpu"
 
+@pytest.mark.skip
 
 @mock.patch.dict(os.environ, {"PL_DEV_DEBUG": "1"})
 @pytest.mark.skipif(not TPU_AVAILABLE, reason="test requires TPU machine")

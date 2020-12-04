@@ -101,6 +101,8 @@ def test_cpu_slurm_save_load(enable_pl_optimizer, tmpdir):
     trainer.fit(model)
 
 
+@pytest.mark.skip
+
 @pytest.mark.parametrize("enable_pl_optimizer", [False, True])
 def test_early_stopping_cpu_model(enable_pl_optimizer, tmpdir):
     """Test each of the trainer options."""

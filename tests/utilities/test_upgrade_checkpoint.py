@@ -19,7 +19,7 @@ import torch
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
 from pytorch_lightning.utilities.upgrade_checkpoint import upgrade_checkpoint
 
-
+@pytest.mark.skip
 @pytest.mark.parametrize(
     "old_checkpoint, new_checkpoint",
     [

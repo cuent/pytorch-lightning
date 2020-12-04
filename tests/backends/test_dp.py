@@ -24,6 +24,7 @@ import pytorch_lightning as pl
 
 PRETEND_N_OF_GPUS = 16
 
+@pytest.mark.skip
 
 @pytest.mark.skipif(torch.cuda.device_count() < 2, reason="test requires multi-GPU machine")
 def test_multi_gpu_early_stop_dp(tmpdir):

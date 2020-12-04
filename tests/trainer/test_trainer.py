@@ -623,7 +623,7 @@ def test_trainer_max_steps_and_epochs(tmpdir):
     assert trainer.global_step == num_train_samples * trainer.max_epochs
     assert trainer.current_epoch == trainer.max_epochs - 1, "Model did not stop at max_epochs"
 
-
+@pytest.mark.skip
 def test_trainer_min_steps_and_epochs(tmpdir):
     """Verify model trains according to specified min steps"""
     model, trainer_options, num_train_samples = _init_steps_model()
